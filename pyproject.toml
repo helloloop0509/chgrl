@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chgrl"
+version = "0.1.0"
+description = "Constrained PPO with GNN state representation."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "CHGRL contributors" }
+]
+dependencies = [
+  "torch",
+  "torchvision",
+  "torchaudio",
+  "torch-geometric",
+  "gymnasium",
+  "numpy",
+  "scipy",
+  "pandas",
+  "matplotlib",
+  "seaborn",
+  "tqdm",
+  "pyyaml",
+  "tensorboard",
+  "networkx",
+  "scikit-learn",
+  "hydra-core",
+  "omegaconf",
+  "rich",
+  "requests",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "ruff",
+  "mypy",
+  "black",
+  "isort",
+]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+addopts = "-q"
